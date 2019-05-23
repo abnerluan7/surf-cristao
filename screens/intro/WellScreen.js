@@ -9,6 +9,8 @@ import {
   View,
 } from 'react-native';
 
+import Progress from 'react-native-simple-progress';
+
 export default class WellScreen extends React.Component {
   static navigationOptions = {
     header: null,
@@ -42,6 +44,50 @@ export default class WellScreen extends React.Component {
              Fique próximo de Deus e de pessoas de bem!
             </Text>
           </View>
+
+          <View style={styles.helpContainer}>
+            <View style={{flexDirection:'row', flexWrap:'wrap'}}>
+              <View
+                style={styles.progress} 
+                height={6}
+                progressColor={'#0ebdc4'}
+                borderColor={'#0ebdc4'}
+                borderRadius={7}
+                borderWidth={6} />
+              <View
+                style={styles.progress} 
+                height={6}
+                progressColor={'#ffffff'}
+                borderColor={'#ffffff'}
+                borderRadius={7}
+                borderWidth={6} />
+              <View
+                style={styles.progress} 
+                height={6}
+                progressColor={'#ffffff'}
+                borderColor={'#ffffff'}
+                borderRadius={7}
+                borderWidth={6} />
+              <View
+                style={styles.progress} 
+                height={6}
+                progressColor={'#ffffff'}
+                borderColor={'#ffffff'}
+                borderRadius={7}
+                borderWidth={6} />
+              <View
+                style={styles.progress} 
+                height={6}
+                progressColor={'#ffffff'}
+                borderColor={'#ffffff'}
+                borderRadius={7}
+                borderWidth={6} />
+            </View>
+            <TouchableOpacity onPress={this._handleHelpPress} style={styles.helpLink}>
+              <Text style={styles.helpLinkText}>Continuar</Text>
+            </TouchableOpacity>
+          </View>
+
         </ScrollView>
       </View>
     );
@@ -79,5 +125,22 @@ const styles = StyleSheet.create({
     lineHeight: 20,
     fontWeight: 'normal',
     textAlign: 'center',
-  }
+  },
+  helpContainer: {
+    marginTop: 15,
+    alignItems: 'center',
+    paddingTop: 80,
+  },
+
+  progress: {
+    backgroundColor: '#0ebdc4',
+    marginHorizontal: 3,
+  },
+  helpLink: {
+    paddingVertical: 15,
+  },
+  helpLinkText: {
+    fontSize: 14,
+    color: '#2e78b7',
+  },
 });
