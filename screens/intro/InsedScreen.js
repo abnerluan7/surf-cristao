@@ -12,13 +12,13 @@ import {
 
 import Progress from 'react-native-simple-progress';
 
-export default class WellScreen extends React.Component {
+export default class InsedScreen extends React.Component {
   static navigationOptions = {
     header: null,
   };
 
   load = () => {
-    this.props.navigation.navigate('Insed');
+    this.props.navigation.navigate('Notif');
   }
   
 
@@ -31,19 +31,15 @@ export default class WellScreen extends React.Component {
             <Image
               source={
                 __DEV__
-                  ? require('../../assets/images/logo-white3x.png')
-                  : require('../../assets/images/logo-white3x.png')
+                  ? require('../../assets/images/flood3x.png')
+                  : require('../../assets/images/flood3x.png')
               }
               style={styles.welcomeImage}
             />
           </View>
           <View style={styles.getStartedContainer}>
             <Text style={styles.getStartedText}>
-              Seja bem vindo ao aplicativo dos Surfistas de Cristo
-            </Text>
-
-            <Text style={styles.getStartedText}>
-             Fique próximo de Deus e de pessoas de bem!
+              Fique por dentro de tudo que acontece em nosso ministério, participe dos nossos eventos, confraternizações, atividades e muito mais.
             </Text>
           </View>
 
@@ -59,8 +55,8 @@ export default class WellScreen extends React.Component {
               <View
                 style={styles.progress} 
                 height={6}
-                progressColor={'#ffffff'}
-                borderColor={'#ffffff'}
+                progressColor={'#0ebdc4'}
+                borderColor={'#0ebdc4'}
                 borderRadius={7}
                 borderWidth={6} />
               <View

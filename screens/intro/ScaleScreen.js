@@ -12,13 +12,13 @@ import {
 
 import Progress from 'react-native-simple-progress';
 
-export default class WellScreen extends React.Component {
+export default class ScaleScreen extends React.Component {
   static navigationOptions = {
     header: null,
   };
 
   load = () => {
-    this.props.navigation.navigate('Insed');
+    this.props.navigation.navigate('Loc');
   }
   
 
@@ -31,20 +31,60 @@ export default class WellScreen extends React.Component {
             <Image
               source={
                 __DEV__
-                  ? require('../../assets/images/logo-white3x.png')
-                  : require('../../assets/images/logo-white3x.png')
+                  ? require('../../assets/images/shirt3x.png')
+                  : require('../../assets/images/shirt3x.png')
               }
               style={styles.welcomeImage}
             />
           </View>
           <View style={styles.getStartedContainer}>
             <Text style={styles.getStartedText}>
-              Seja bem vindo ao aplicativo dos Surfistas de Cristo
+              Quando você vai comprar uma roupa que tamanho compra?
             </Text>
-
-            <Text style={styles.getStartedText}>
-             Fique próximo de Deus e de pessoas de bem!
-            </Text>
+            <TouchableOpacity onPress={this.load} style={styles.buttonNextPadd}>
+            <View style={{flexDirection:'row', flexWrap:'wrap', paddingTop:40}}>
+              <View
+                style={styles.scale} 
+                height={50}
+                borderColor={'#313139'}
+                borderRadius={50}
+                borderWidth={2}>
+                  <Text style={styles.ballText}>P</Text>
+                </View>
+              <View
+                style={styles.scale} 
+                height={50}
+                borderColor={'#313139'}
+                borderRadius={50}
+                borderWidth={2}>
+                  <Text style={styles.ballText}>M</Text>
+              </View>
+              <View
+                style={styles.scale} 
+                height={50}
+                borderColor={'#313139'}
+                borderRadius={50}
+                borderWidth={2}>
+                  <Text style={styles.ballText}>G</Text>
+                </View>
+              <View
+                style={styles.scale} 
+                height={50}
+                borderColor={'#313139'}
+                borderRadius={50}
+                borderWidth={2}>
+                  <Text style={styles.ballText}>GG</Text>
+                </View>
+              <View
+                style={styles.scale} 
+                height={50}
+                borderColor={'#313139'}
+                borderRadius={50}
+                borderWidth={2}>
+                  <Text style={styles.ballText2}>plus size</Text>
+                </View>
+            </View>
+            </TouchableOpacity>
           </View>
 
           <View style={styles.next}>
@@ -59,22 +99,22 @@ export default class WellScreen extends React.Component {
               <View
                 style={styles.progress} 
                 height={6}
-                progressColor={'#ffffff'}
-                borderColor={'#ffffff'}
+                progressColor={'#0ebdc4'}
+                borderColor={'#0ebdc4'}
                 borderRadius={7}
                 borderWidth={6} />
               <View
                 style={styles.progress} 
                 height={6}
-                progressColor={'#ffffff'}
-                borderColor={'#ffffff'}
+                progressColor={'#0ebdc4'}
+                borderColor={'#0ebdc4'}
                 borderRadius={7}
                 borderWidth={6} />
               <View
                 style={styles.progress} 
                 height={6}
-                progressColor={'#ffffff'}
-                borderColor={'#ffffff'}
+                progressColor={'#0ebdc4'}
+                borderColor={'#0ebdc4'}
                 borderRadius={7}
                 borderWidth={6} />
               <View
@@ -86,8 +126,8 @@ export default class WellScreen extends React.Component {
                 borderWidth={6} />
             </View>
             <TouchableOpacity onPress={this.load} style={styles.buttonNextPadd}>
-              <View style={styles.buttonNext}>
-                <Text style={styles.buttonNextText}>CONTINUAR</Text>
+              <View style={styles.buttonNot}>
+                <Text style={styles.buttonNextText}>PULAR ETAPA</Text>
               </View>
             </TouchableOpacity>
           </View>
@@ -131,6 +171,31 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     fontFamily: 'montserrat-regular'
   },
+  scale: {
+    marginHorizontal: 3,
+    width: 50,
+    alignItems: 'center',
+  },
+  ballText: {
+    paddingTop: 12,
+    width: 30,
+    fontSize: 16,
+    color: '#9b9b9f',
+    lineHeight: 20,
+    fontWeight: 'normal',
+    textAlign: 'center',
+    fontFamily: 'montserrat-regular'
+  },
+  ballText2: {
+    paddingTop: 2,
+    width: 30,
+    fontSize: 12,
+    color: '#9b9b9f',
+    lineHeight: 20,
+    fontWeight: 'normal',
+    textAlign: 'center',
+    fontFamily: 'montserrat-regular'
+  },
   next: {
     marginTop: 25,
     alignItems: 'center',
@@ -148,6 +213,15 @@ const styles = StyleSheet.create({
     borderColor: "#0ebdc4",
     borderWidth: 2,
     backgroundColor: "#0ebdc4",
+    width: 320,
+    height: 50,
+    alignItems: 'center',
+    borderRadius: 30
+  },
+
+  buttonNot: {
+    borderColor: "#0ebdc4",
+    borderWidth: 2,
     width: 320,
     height: 50,
     alignItems: 'center',

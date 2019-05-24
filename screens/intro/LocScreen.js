@@ -12,13 +12,13 @@ import {
 
 import Progress from 'react-native-simple-progress';
 
-export default class WellScreen extends React.Component {
+export default class LocScreen extends React.Component {
   static navigationOptions = {
     header: null,
   };
 
   load = () => {
-    this.props.navigation.navigate('Insed');
+    this.props.navigation.navigate('Notif');
   }
   
 
@@ -31,19 +31,15 @@ export default class WellScreen extends React.Component {
             <Image
               source={
                 __DEV__
-                  ? require('../../assets/images/logo-white3x.png')
-                  : require('../../assets/images/logo-white3x.png')
+                  ? require('../../assets/images/map3x.png')
+                  : require('../../assets/images/map3x.png')
               }
               style={styles.welcomeImage}
             />
           </View>
           <View style={styles.getStartedContainer}>
             <Text style={styles.getStartedText}>
-              Seja bem vindo ao aplicativo dos Surfistas de Cristo
-            </Text>
-
-            <Text style={styles.getStartedText}>
-             Fique próximo de Deus e de pessoas de bem!
+            Libera ai a sua localização no app, para mostrarmos os eventos e encontros mais próximos de você.
             </Text>
           </View>
 
@@ -59,35 +55,41 @@ export default class WellScreen extends React.Component {
               <View
                 style={styles.progress} 
                 height={6}
-                progressColor={'#ffffff'}
-                borderColor={'#ffffff'}
+                progressColor={'#0ebdc4'}
+                borderColor={'#0ebdc4'}
                 borderRadius={7}
                 borderWidth={6} />
               <View
                 style={styles.progress} 
                 height={6}
-                progressColor={'#ffffff'}
-                borderColor={'#ffffff'}
+                progressColor={'#0ebdc4'}
+                borderColor={'#0ebdc4'}
                 borderRadius={7}
                 borderWidth={6} />
               <View
                 style={styles.progress} 
                 height={6}
-                progressColor={'#ffffff'}
-                borderColor={'#ffffff'}
+                progressColor={'#0ebdc4'}
+                borderColor={'#0ebdc4'}
                 borderRadius={7}
                 borderWidth={6} />
               <View
                 style={styles.progress} 
                 height={6}
-                progressColor={'#ffffff'}
-                borderColor={'#ffffff'}
+                progressColor={'#0ebdc4'}
+                borderColor={'#0ebdc4'}
                 borderRadius={7}
                 borderWidth={6} />
             </View>
             <TouchableOpacity onPress={this.load} style={styles.buttonNextPadd}>
               <View style={styles.buttonNext}>
-                <Text style={styles.buttonNextText}>CONTINUAR</Text>
+                <Text style={styles.buttonNextText}>VAMOS COMEÇAR?</Text>
+              </View>
+            </TouchableOpacity>
+
+            <TouchableOpacity onPress={this._handleHelpPress} style={styles.buttonNextPadd}>
+              <View style={styles.buttonNot}>
+                <Text style={styles.buttonNextText}>NÃO PERMITIR</Text>
               </View>
             </TouchableOpacity>
           </View>
@@ -131,6 +133,31 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     fontFamily: 'montserrat-regular'
   },
+  scale: {
+    marginHorizontal: 3,
+    width: 50,
+    alignItems: 'center',
+  },
+  ballText: {
+    paddingTop: 12,
+    width: 30,
+    fontSize: 16,
+    color: '#9b9b9f',
+    lineHeight: 20,
+    fontWeight: 'normal',
+    textAlign: 'center',
+    fontFamily: 'montserrat-regular'
+  },
+  ballText2: {
+    paddingTop: 2,
+    width: 30,
+    fontSize: 12,
+    color: '#9b9b9f',
+    lineHeight: 20,
+    fontWeight: 'normal',
+    textAlign: 'center',
+    fontFamily: 'montserrat-regular'
+  },
   next: {
     marginTop: 25,
     alignItems: 'center',
@@ -148,6 +175,15 @@ const styles = StyleSheet.create({
     borderColor: "#0ebdc4",
     borderWidth: 2,
     backgroundColor: "#0ebdc4",
+    width: 320,
+    height: 50,
+    alignItems: 'center',
+    borderRadius: 30
+  },
+
+  buttonNot: {
+    borderColor: "#0ebdc4",
+    borderWidth: 2,
     width: 320,
     height: 50,
     alignItems: 'center',

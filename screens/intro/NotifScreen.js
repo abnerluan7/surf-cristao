@@ -12,13 +12,13 @@ import {
 
 import Progress from 'react-native-simple-progress';
 
-export default class WellScreen extends React.Component {
+export default class NotifScreen extends React.Component {
   static navigationOptions = {
     header: null,
   };
 
   load = () => {
-    this.props.navigation.navigate('Insed');
+    this.props.navigation.navigate('Scale');
   }
   
 
@@ -31,24 +31,34 @@ export default class WellScreen extends React.Component {
             <Image
               source={
                 __DEV__
-                  ? require('../../assets/images/logo-white3x.png')
-                  : require('../../assets/images/logo-white3x.png')
+                  ? require('../../assets/images/chat-bubble3x.png')
+                  : require('../../assets/images/chat-bubble3x.png')
               }
               style={styles.welcomeImage}
             />
           </View>
           <View style={styles.getStartedContainer}>
             <Text style={styles.getStartedText}>
-              Seja bem vindo ao aplicativo dos Surfistas de Cristo
-            </Text>
-
-            <Text style={styles.getStartedText}>
-             Fique próximo de Deus e de pessoas de bem!
+              Permita as suas notificações para que possamos mandar novidades, avisos e convites dos surfistas!
             </Text>
           </View>
 
           <View style={styles.next}>
             <View style={{flexDirection:'row', flexWrap:'wrap'}}>
+              <View
+                style={styles.progress} 
+                height={6}
+                progressColor={'#0ebdc4'}
+                borderColor={'#0ebdc4'}
+                borderRadius={7}
+                borderWidth={6} />
+              <View
+                style={styles.progress} 
+                height={6}
+                progressColor={'#0ebdc4'}
+                borderColor={'#0ebdc4'}
+                borderRadius={7}
+                borderWidth={6} />
               <View
                 style={styles.progress} 
                 height={6}
@@ -70,24 +80,16 @@ export default class WellScreen extends React.Component {
                 borderColor={'#ffffff'}
                 borderRadius={7}
                 borderWidth={6} />
-              <View
-                style={styles.progress} 
-                height={6}
-                progressColor={'#ffffff'}
-                borderColor={'#ffffff'}
-                borderRadius={7}
-                borderWidth={6} />
-              <View
-                style={styles.progress} 
-                height={6}
-                progressColor={'#ffffff'}
-                borderColor={'#ffffff'}
-                borderRadius={7}
-                borderWidth={6} />
             </View>
             <TouchableOpacity onPress={this.load} style={styles.buttonNextPadd}>
               <View style={styles.buttonNext}>
                 <Text style={styles.buttonNextText}>CONTINUAR</Text>
+              </View>
+            </TouchableOpacity>
+
+            <TouchableOpacity onPress={this._handleHelpPress} style={styles.buttonNextPadd}>
+              <View style={styles.buttonNot}>
+                <Text style={styles.buttonNextText}>NÃO PERMITIR</Text>
               </View>
             </TouchableOpacity>
           </View>
@@ -148,6 +150,15 @@ const styles = StyleSheet.create({
     borderColor: "#0ebdc4",
     borderWidth: 2,
     backgroundColor: "#0ebdc4",
+    width: 320,
+    height: 50,
+    alignItems: 'center',
+    borderRadius: 30
+  },
+
+  buttonNot: {
+    borderColor: "#0ebdc4",
+    borderWidth: 2,
     width: 320,
     height: 50,
     alignItems: 'center',
