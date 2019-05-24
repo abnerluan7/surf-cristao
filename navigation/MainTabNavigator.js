@@ -3,7 +3,7 @@ import { Platform } from 'react-native';
 import { createStackNavigator, createBottomTabNavigator } from 'react-navigation';
 
 import TabBarIcon from '../components/TabBarIcon';
-import HomeScreen from '../screens/HomeScreen';
+import HomeScreen from '../screens/logged/HomeScreen';
 import LinksScreen from '../screens/LinksScreen';
 import SettingsScreen from '../screens/SettingsScreen';
 
@@ -13,6 +13,14 @@ const HomeStack = createStackNavigator({
 
 HomeStack.navigationOptions = {
   tabBarLabel: 'Home',
+  tabBarOptions: { 
+      activeTintColor: '#9b9ca1',
+      inactiveTintColor: '#9b9ca1',
+      style: {
+        backgroundColor: '#21242d',
+        height:65
+      }
+    },
   tabBarIcon: ({ focused }) => (
     <TabBarIcon
       focused={focused}
@@ -30,7 +38,7 @@ const LinksStack = createStackNavigator({
 });
 
 LinksStack.navigationOptions = {
-  tabBarLabel: 'Links',
+  tabBarLabel: 'Loja',
   tabBarIcon: ({ focused }) => (
     <TabBarIcon
       focused={focused}
@@ -44,7 +52,21 @@ const SettingsStack = createStackNavigator({
 });
 
 SettingsStack.navigationOptions = {
-  tabBarLabel: 'Settings',
+  tabBarLabel: 'Eventos',
+  tabBarIcon: ({ focused }) => (
+    <TabBarIcon
+      focused={focused}
+      name={Platform.OS === 'ios' ? 'ios-options' : 'md-options'}
+    />
+  ),
+};
+
+const NotificacaoStack = createStackNavigator({
+  Settings: SettingsScreen,
+});
+
+NotificacaoStack.navigationOptions = {
+  tabBarLabel: 'Notificações',
   tabBarIcon: ({ focused }) => (
     <TabBarIcon
       focused={focused}
@@ -57,4 +79,5 @@ export default createBottomTabNavigator({
   HomeStack,
   LinksStack,
   SettingsStack,
+  NotificacaoStack,
 });

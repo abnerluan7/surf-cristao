@@ -20,7 +20,7 @@ export default class MenuScreen extends React.Component {
   };
 
   load = () => {
-    this.props.navigation.navigate('Notif');
+    this.props.navigation.navigate('App');
   }
   
 

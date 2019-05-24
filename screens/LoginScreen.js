@@ -11,15 +11,13 @@ import {
   TextInput
 } from 'react-native';
 
-import Progress from 'react-native-simple-progress';
-
 export default class LoginScreen extends React.Component {
   static navigationOptions = {
     header: null,
   };
 
   load = () => {
-    this.props.navigation.navigate('Insed');
+    this.props.navigation.navigate('App');
   }
 
   constructor(props) {

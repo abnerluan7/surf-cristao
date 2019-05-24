@@ -11,20 +11,22 @@ import ScaleScreen from '../screens/intro/ScaleScreen';
 import LocScreen from '../screens/intro/LocScreen';
 import LoginScreen from '../screens/LoginScreen';
 import MenuScreen from '../screens/logged/MenuScreen';
+import LaunchScreen from '../screens/logged/LaunchScreen';
 
 export default createAppContainer(createSwitchNavigator(
   {
   // You could add another route here for authentication.
   // Read more at https://reactnavigation.org/docs/en/auth-flow.html
-  Main: MenuScreen,
-  Well: WellScreen,
-  Insed: InsedScreen,
-  Notif: NotifScreen,
-  Scale: ScaleScreen,
-  Loc: LocScreen,
-  Login: LoginScreen,
-  Menu: MenuScreen,
-  App: MainTabNavigator
+    Main: MainTabNavigator,
+    Well: WellScreen,
+    Insed: InsedScreen,
+    Notif: NotifScreen,
+    Scale: ScaleScreen,
+    Loc: LocScreen,
+    Login: LoginScreen,
+    Menu: MenuScreen,
+    Launch: LaunchScreen,
+    App: MainTabNavigator
   }
   
 
